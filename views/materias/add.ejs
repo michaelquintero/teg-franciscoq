@@ -1,0 +1,26 @@
+<%- include ../layouts/header.ejs %>
+<div class="container p-5 ">  
+    <div class="row align-items-center">
+        <div class="col-md-4 mx-auto">
+                <div class="card shadow p-2 mb-4 bg-body rounded text-center border border-5">
+                    <div class="card-body">
+                        <form id="agg-materia" action="/materias/add" method="POST">
+
+                            <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label"><strong>Codigo de la Materia</strong></label>
+                            <input type="text" class="form-control" name="codigo" placeholder="Ingrese Codigo.">
+                            </div>
+
+                            <div class="form-group">
+                            <a href="/materias/lista" class="btn btn-danger">cancelar</a>
+                            <button class="btn btn-success position-center "> Unirse </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../layouts/footer.ejs %>
