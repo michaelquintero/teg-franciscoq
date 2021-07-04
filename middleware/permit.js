@@ -5,11 +5,11 @@
     // return a middleware
     return (request, response, next) => {
       const { user } = request;
-     
-      if (user && rolesPermitidos.includes(user.role)) {
+
+      if (user && rolesPermitidos.includes(user.rol)) {
         next(); // role is allowed, so continue on the next middleware
       } else {
-        return response.status(403).json({message: "Forbidden"}); // user is forbidden
+        return response.render('error', {message: "Usuario no autorizado", error:{}}); // user is forbidden
       }
     }
   }

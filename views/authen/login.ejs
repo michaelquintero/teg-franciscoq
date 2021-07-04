@@ -21,6 +21,9 @@
                 <input type="text" name="username" placeholder="Ingrese Usuario" required>
                 <input type="password" name="password" requered placeholder="Ingrese Contraseña">
                 <button>Entrar</button>
+                <% if (typeof message !== 'undefined' && message) {%>
+                    <p><%= message %></p>
+                <% } %>
             </form>
             <!-- FORMULARIO DE LOGIN-->
             <form action="/login-docente" method="POST" class="formulario-login-docente">
@@ -28,8 +31,10 @@
                 <h3>Docente</h3>
                 <input type="text" name="username" placeholder="Ingrese Usuario" required>
                 <input type="password" name="password" id="" requered placeholder="Ingrese Contraseña">
-
                 <button>Entrar</button>
+                <% if (typeof message !== 'undefined' && message) {%>
+                    <p><%= message %></p>
+                <% } %>
             </form>
         </div>
     </div>
