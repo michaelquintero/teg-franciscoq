@@ -16,6 +16,8 @@ var authenticationRouter = require('./routes/authentication');
 var bibliotecaRouter = require('./routes/biblioteca');
 const {database}=require('./config/keys')
 
+var authenticate = require("./middleware/authentication");
+
 var app = express();
 require('./config/passport');
 

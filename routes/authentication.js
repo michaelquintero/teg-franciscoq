@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const authorize = require("../middleware/authentication");
 
 const authencontroller = require('../controllers/autencontroller');
 /* GET page. */
-router.get('/registrarse',authencontroller.index);
+router.get('/registrarse', authorize(), authencontroller.index);
 
-router.get('/login', authencontroller.login); 
+router.get('/login', authorize(), authencontroller.login); 
 
-router.get('/profile',authencontroller.profile);
+router.get('/profile', authencontroller.profile);
 
 router.get('/logout', authencontroller.salir);
 //POST page
