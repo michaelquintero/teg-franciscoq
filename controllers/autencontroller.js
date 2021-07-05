@@ -9,8 +9,8 @@ module.exports={
     },
 
     login: (req,res)=>{
-            res.render('authen/login.ejs');
-        },
+        res.render('authen/login.ejs');
+    },
 
     profile: (req,res)=>{
         res.render('authen/profile.ejs'); 

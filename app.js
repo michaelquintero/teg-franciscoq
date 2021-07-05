@@ -16,6 +16,8 @@ var authenticationRouter = require('./routes/authentication');
 var bibliotecaRouter = require('./routes/biblioteca');
 const {database}=require('./config/keys')
 
+var authenticate = require("./middleware/authentication");
+
 var app = express();
 require('./config/passport');
 
@@ -69,6 +71,13 @@ app.use('/', indexRouter);
 app.use('/', authenticationRouter);
 app.use('/biblioteca', bibliotecaRouter);
 app.use('/materias', materiasRouter); 
+
+// error handler
+app.use(handleErrors);
+
+function handleErrors(err, req, res, next) {
+  res.render('error', {error: err});
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
